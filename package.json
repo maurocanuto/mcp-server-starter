@@ -1,0 +1,21 @@
+{
+  "name": "mcp-server-starter",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.11.1",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "dev:patient": "turbo run dev --filter=patient-mcp",
+    "dev:practitioner": "turbo run dev --filter=practitioner-mcp"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.8.3",
+    "ts-node": "^10.9.2",
+    "eslint": "^9.9.0",
+    "@types/node": "^22.15.3"
+  }
+}

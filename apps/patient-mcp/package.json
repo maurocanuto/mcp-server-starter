@@ -1,0 +1,42 @@
+{
+  "name": "@hisy/patient-mcp",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "patient-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsdown && chmod 755 dist/index.js",
+    "dev": "tsdown --watch",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.4",
+    "tsdown": "^0.14.2",
+    "zod": "^3.25.51"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "tsdown": {
+    "entries": [
+      "src/index.ts"
+    ],
+    "format": [
+      "esm"
+    ],
+    "dts": true,
+    "sourcemap": true,
+    "clean": true,
+    "external": [
+      "@modelcontextprotocol/sdk"
+    ]
+  }
+}
