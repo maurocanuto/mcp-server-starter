@@ -40,7 +40,6 @@ server.registerTool(
   searchPatientHandler
 );
 
-// Start the server
 async function startServer() {
   try {
     const transport = new StdioServerTransport();

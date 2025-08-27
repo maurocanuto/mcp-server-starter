@@ -25,12 +25,13 @@ server.registerTool(
   searchPractitionerHandler
 );
 
-// Start the server
-(async () => {
-  console.error(
-    "[practitioner-mcp] MCP server starting with stdio transport..."
-  );
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-  console.error("[practitioner-mcp] MCP server connected and ready");
-})();
+async function startServer() {
+  try {
+    const transport = new StdioServerTransport();
+    await server.connect(transport);
+  } catch (error) {
+    console.error(`[practitioner-mcp] Error: ${error}\n`);
+  }
+}
+
+startServer();
